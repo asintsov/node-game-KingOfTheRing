@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SimpleBoxing by asintsov</title>
+        <link rel="stylesheet" href="static/sb.css">
+        <link rel="icon" type="image/x-icon" href="static/king_of_the_ring.ico">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div class = 'Menu' id='menu'>
+            <h1 class='Menu-title' id='menu-title-1'>SIMPLE BOXING</h1>
+            <h2 class='Menu-title' id='menu-title-2'>FIGHTING GAME</h2>
+            <h3 class='Menu-title' id='menu-title-3'>by ASINTSOV</h3>
+            <img src="static/images/menu640x480.jpg" class = 'Background-image' id="menu-image"/>
+            <button class="Button" id="menu-button-blue-single">Одиночная игра</button>
+            <button class="Button" id="menu-button-red-single">Одиночная игра</button>
+            <button class="Button" id="menu-button-blue-multiplayer">Мультиплеер</button>
+            <button class="Button" id="menu-button-red-multiplayer">Мультиплеер</button>
+            <input class='Mute-button' type= 'image' src='static/images/mute-on.png' id='mute-button-on'>
+            <input class='Mute-button' type= 'image' src='static/images/mute-off.png' id='mute-button-off'>
+        </div>
+        <script type='module' src="static/sb.js"></script>
+        <div class='Win' id='win-blue'>
+            <img src="static/images/win_blue640x480.jpg" class = 'Bckground-image' id="win-blue-image" />
+            <button class="Button" id="back-to-menu-button-blue">В меню</button>
+        </div>
+        <div class='Win' id='win-red'>
+            <img src="static/images/win_red640x480.jpg" class = 'Background-image' id="win-red-image"/>
+            <button class="Button" id="back-to-menu-button-red">В меню</button>
+        </div>
+        <div class="wrapper">
+            <canvas width="0" height="0" class="canvas" id="canvas">Ваш браузер не поддерживает JavaScript и HTML5!</canvas>
+        </div>
+		<div class='Game-image' id='game-images'>
+            <img src="static/images/ring640x480.jpg" id="ring-img">
+            <img src="static/images/start480blue.png" id="boxer-blue-img-start">
+            <img src="static/images/stand480blue.png" id="boxer-blue-img-stand">
+            <img src="static/images/block480blue.png" id="boxer-blue-img-block">
+            <img src="static/images/fronthit480blue.png" id="boxer-blue-img-fronthit">
+            <img src="static/images/lowerhit480blue.png" id="boxer-blue-img-lowerhit">
+            <img src="static/images/upperhit480blue.png" id="boxer-blue-img-upperhit">
+            <img src="static/images/damage480blue.png" id="boxer-blue-img-damage">
+            <img src="static/images/win480blue.png" id="boxer-blue-img-win">
+            <img src="static/images/lose480blue.png" id="boxer-blue-img-lose">
+            <img src="static/images/start480red.png" id="boxer-red-img-start">
+            <img src="static/images/stand480red.png" id="boxer-red-img-stand">
+            <img src="static/images/block480red.png" id="boxer-red-img-block">
+            <img src="static/images/fronthit480red.png" id="boxer-red-img-fronthit">
+            <img src="static/images/lowerhit480red.png" id="boxer-red-img-lowerhit">
+            <img src="static/images/upperhit480red.png" id="boxer-red-img-upperhit">
+            <img src="static/images/damage480red.png" id="boxer-red-img-damage">
+            <img src="static/images/win480red.png" id="boxer-red-img-win">
+            <img src="static/images/lose480red.png" id="boxer-red-img-lose">
+            <img src="static/images/scaleblue1.png" id="scale-blue-img-10">
+            <img src="static/images/scaleblue2.png" id="scale-blue-img-20">
+            <img src="static/images/scaleblue3.png" id="scale-blue-img-30">
+            <img src="static/images/scaleblue4.png" id="scale-blue-img-40">
+            <img src="static/images/scaleblue5.png" id="scale-blue-img-50">
+            <img src="static/images/scaleblue6.png" id="scale-blue-img-60">
+            <img src="static/images/scaleblue7.png" id="scale-blue-img-70">
+            <img src="static/images/scaleblue8.png" id="scale-blue-img-80">
+            <img src="static/images/scaleblue9.png" id="scale-blue-img-90">
+            <img src="static/images/scaleblue10.png" id="scale-blue-img-100">
+            <img src="static/images/scaleblue11.png" id="scale-blue-img-110">
+            <img src="static/images/scaleblue12.png" id="scale-blue-img-120">
+            <img src="static/images/scaleblue13.png" id="scale-blue-img-130">
+            <img src="static/images/scaleblue14.png" id="scale-blue-img-140">
+            <img src="static/images/scaleblue15.png" id="scale-blue-img-150">
+            <img src="static/images/scalered1.png" id="scale-red-img-10">
+            <img src="static/images/scalered2.png" id="scale-red-img-20">
+            <img src="static/images/scalered3.png" id="scale-red-img-30">
+            <img src="static/images/scalered4.png" id="scale-red-img-40">
+            <img src="static/images/scalered5.png" id="scale-red-img-50">
+            <img src="static/images/scalered6.png" id="scale-red-img-60">
+            <img src="static/images/scalered7.png" id="scale-red-img-70">
+            <img src="static/images/scalered8.png" id="scale-red-img-80">
+            <img src="static/images/scalered9.png" id="scale-red-img-90">
+            <img src="static/images/scalered10.png" id="scale-red-img-100">
+            <img src="static/images/scalered11.png" id="scale-red-img-110">
+            <img src="static/images/scalered12.png" id="scale-red-img-120">
+            <img src="static/images/scalered13.png" id="scale-red-img-130">
+            <img src="static/images/scalered14.png" id="scale-red-img-140">
+            <img src="static/images/scalered15.png" id="scale-red-img-150">
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+    </body>
+</html>

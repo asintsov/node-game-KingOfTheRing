@@ -1,0 +1,165 @@
+body, html
+{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+ 
+.wrapper
+{
+    width: 100%;
+    height: 100%;
+}
+ 
+.canvas
+{
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+.Game-image
+{
+    display: none;
+}
+
+.Menu {
+    position: relative;
+    width: 640px;
+    height: 480px
+}
+
+.Background-image {
+    width: 100%;
+    height: 100%;
+}
+
+.Button {
+    width: 130px;
+    height: 40px;
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    padding: 12px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    box-sizing: border-box;
+    transition: all 500ms ease; 
+    outline: none;
+}
+
+.Menu-title
+{
+    position: absolute;
+    font-family: fantasy;
+    color: rgba(34, 34, 34, 1) ;
+
+}
+
+
+#menu-title-1
+{
+    top: 7%;
+    left: 34%;
+}
+#menu-title-2
+{
+    top: 15%; 
+    left: 38%;
+}
+#menu-title-3
+{
+    top: 22%;
+    left: 42%;
+
+} 
+
+.Mute-button
+{
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    top: 1%;
+    left: 88%;
+}
+
+#mute-button-off
+{
+    display: none;
+}
+
+.Win {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    display: none
+}
+
+#menu-button-blue-single {
+    background-color: rgb(67, 85, 245);
+    top: 60%;
+    left: 10%;
+}
+
+#menu-button-blue-single:hover {
+    color: black;
+    background-color: white
+}
+
+#menu-button-red-single {
+    background-color: rgb(241, 57, 57);
+    top: 60%;
+    right: 10%;
+}
+
+#menu-button-red-single:hover {
+    color: black;
+    background-color: white
+}
+
+#menu-button-blue-multiplayer {
+    background-color: rgb(67, 85, 245);
+    top: 80%;
+    left: 10%;
+}
+
+#menu-button-blue-multiplayer:hover {
+    color: black;
+    background-color: white
+}
+
+#menu-button-red-multiplayer {
+    background-color: rgb(241, 57, 57);
+    top: 80%;
+    right: 10%;
+}
+
+#menu-button-red-multiplayer:hover {
+    color: black;
+    background-color: white
+}
+
+#back-to-menu-button-blue {
+    background-color: rgb(67, 85, 245);
+    top: 20%;
+    left: 40%;
+}
+
+#back-to-menu-button-blue:hover {
+    color: black;
+    background-color: white
+}
+
+#back-to-menu-button-red {
+    background-color: rgb(241, 57, 57);
+    top: 20%;
+    left: 40%;
+}
+
+#back-to-menu-button-red:hover {
+    color: black;
+    background-color: white
+}
