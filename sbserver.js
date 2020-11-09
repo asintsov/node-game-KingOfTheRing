@@ -20,7 +20,8 @@ server.listen(4000, function() {
     console.log('Запускаю сервер на порте 4000');
 });
 
-var states = {
+let corners = {blue: false, red: false};
+let states = {
     blue: 
     {   action: null,
         life: null,
@@ -41,7 +42,30 @@ var states = {
     }
 };
 
-var corners = {blue: false, red: false};
+function restart(){
+    corners = {blue: false, red: false};
+    states = {
+        blue: 
+        {   action: null,
+            life: null,
+            block: null,
+            x: null,
+            face: null,
+            fist: null,
+            back: null
+        },
+        red:
+        {   action: null,
+            life: null,
+            block: null,
+            x: null,
+            face: null,
+            fist: null,
+            back: null
+        }
+    }
+}
+
 io.on('connection', function(socket) {
     socket.on('new player', function(corner) {
         switch(corner){
@@ -56,12 +80,10 @@ io.on('connection', function(socket) {
                     socket.on('hit', (hit) => {
                         states.red.life -= hit * states.red.block
                         if (!states.red.life){
-                            io.sockets.emit('win', 'BLUE')
+                            io.sockets.emit('win', 'BLUE');
+                            restart();
                         }
                     })
-                }
-                else{
-
                 }
                 break
             case 'RED':
@@ -74,13 +96,11 @@ io.on('connection', function(socket) {
                     })
                     socket.on('hit', (hit) => {
                         states.blue.life -= hit * states.blue.block
-                        if (!states.blue.life){
-                            io.sockets.emit('win', 'RED')
+                        if (states.blue.life == 0){
+                            io.sockets.emit('win', 'RED');
+                            restart();
                         }
                     })
-                }
-                else{
-                    
                 }
                 break
         }
@@ -92,5 +112,4 @@ io.on('connection', function(socket) {
 
 setInterval(function() {
   io.sockets.emit('states', states);
-
 }, 1000 / 20);
