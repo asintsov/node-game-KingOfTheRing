@@ -73,7 +73,7 @@ class GameSingle extends Game{
                 this._AutoKeyUp();
             }
             this._Update();
-        }, 1000 / 100);
+        }, 1000 / 65);
         window.addEventListener("resize", () => {this._Resize();}); 
         window.addEventListener("keydown", (e) => { this._KeyDown(e);}); 
         window.addEventListener("keyup", () => { this._KeyUp();}); 

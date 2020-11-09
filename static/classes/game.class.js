@@ -11,7 +11,8 @@ class Game{
     _player;
     _oponent;
     _keyFlag
-    _timer; 
+    _timer;
+    _keycodes 
     
     constructor(corner){
         this._canvas = document.getElementById("canvas");
@@ -25,7 +26,6 @@ class Game{
             blue: new BlueScale(this._boxers.blue),
             red: new RedScale(this._boxers.red)
         };
-
         this._corner = corner;
         switch(this._corner){
             case 'BLUE':
@@ -38,10 +38,17 @@ class Game{
                 break;
         }
         this._player.setOponent(this._oponent);
-        this._oponent.setOponent(this._player);
-        
+        this._oponent.setOponent(this._player);       
         this._keyDownFlag = false;
         this._timer = 0
+        this._keycodes = {
+            fronthit: 87,
+            block: 83,
+            upperhit: 81,
+            lowerhit: 65, 
+            moveright: 39,
+            moveleft: 37
+        }
     }
 
     _Sleep(time) {return new Promise((resolve) => setTimeout(resolve, time));}
@@ -69,37 +76,33 @@ class Game{
         if (!this._keyDownFlag){
             switch(e.keyCode)
             {
-                case 87: //кнопка 'w' - прямой удар
+                case this._keycodes.fronthit:
                     this._player.action('FRONTHIT');
-                    this._Sleep(65).then(() => {this._player.action('STAND')});
                     this._keyDownFlag = true;
                     this._Hit();
                     break;
-                case 83: //кнопка 's' - блок
+                case this._keycodes.block:
                     this._player.action('BLOCK');
                     break;
-                case 81: //кнопка 'q' - верхний удар
+                case this._keycodes.upperhit:
                     this._player.action('UPPERHIT');
-                    this._Sleep(65).then(() => {this._player.action('STAND')});
                     this._keyDownFlag = true;
                     this._Hit();
                     break;
-                case 65: //кнопка 'a' - нижний удар
+                case this._keycodes.lowerhit:
                     this._player.action('LOWERHIT');
-                    this._Sleep(65).then(() => {this._player.action('STAND')});
                     this._keyDownFlag = true;
                     this._Hit();
                     break;
-                case 39: //шаг вправо
+                case this._keycodes.moveright:
                     this._player.action('RIGHT');
                     break;
-                case 37: //шаг влево
+                case this._keycodes.moveleft:
                     this._player.action('LEFT');
                     break;
             }
         }
     }
-
     _KeyUp(){ 
         this._player.action('STAND');
         this._keyDownFlag = false
