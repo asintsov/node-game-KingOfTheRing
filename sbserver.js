@@ -1,13 +1,13 @@
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var socketIO = require('socket.io');
-const { isNullOrUndefined } = require('util');
-var app = express();
-var server = http.Server(app);
-var io = socketIO(server);
+import express from 'express'
+import http from 'http'
+import path from 'path'
+import socketIO from 'socket.io'
+let app = express();
+let server = http.Server(app);
+let io = socketIO(server);
 
 app.set('port', 4000);
+let __dirname = path.resolve();
 app.use('/static', express.static(__dirname + '/static'));
 
 // Маршруты
@@ -104,9 +104,6 @@ io.on('connection', function(socket) {
                 }
                 break
         }
-    });
-    socket.on('disconnect', function(){
-        //игра прерывается
     });
 });
 

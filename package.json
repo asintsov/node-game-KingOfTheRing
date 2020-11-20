@@ -1,0 +1,21 @@
+{
+  "name": "king_of_the_ring_by_asintsov",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sb.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha sbtest.js"
+  },
+  "author": "asintsov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
+}
