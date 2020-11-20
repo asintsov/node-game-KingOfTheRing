@@ -42,12 +42,12 @@ class Game{
         this._keyDownFlag = false;
         this._timer = 0
         this._keycodes = {
-            fronthit: 87,
-            block: 83,
-            upperhit: 81,
-            lowerhit: 65, 
-            moveright: 39,
-            moveleft: 37
+            fronthit: 87, // клавиша 'w'
+            block: 83,    // клавиша 's'
+            upperhit: 81, // клавиша 'q'
+            lowerhit: 65, // клавиша 'a'
+            moveright: 39,// клавиша 'ArrowRight'
+            moveleft: 37  // клавиша 'ArrowLeft'
         }
     }
 
@@ -125,4 +125,4 @@ class Game{
     }
 }
 
-export {Game};
+export {Game}

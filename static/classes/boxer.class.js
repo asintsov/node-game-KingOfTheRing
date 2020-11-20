@@ -8,6 +8,7 @@ class Boxer {
     constructor() {
         this.images = new Map();
         this.parametrs = {damage: 10, arm: 160, speed: 30, actionFactor: 1};
+        this.state = {}
     }
     getImage(){return this.image;}
     setImage(){this.image = this.images.get(this.state.action);}
@@ -50,24 +51,35 @@ class Boxer {
                 this.setState({block : 0, fist : this.state.face});
                 break;
             case 'RIGHT':
-                this.move(this.parametrs.speed);
+                this.move('RIGHT');
                 break;
             case 'LEFT':
-                this.move(-this.parametrs.speed);
+                this.move('LEFT');
                 break;
         }
     }
 
-    move(speed){
+    move(destination){
+        let speed = this.parametrs.speed;
+        switch(destination){
+            case 'RIGHT':
+                speed *= 1;
+                break;
+            case 'LEFT':
+                speed *= -1;
+                break;
+        }
         this.setState({
             x : this.state.x + speed,
             face : this.state.face + speed,
+            fist : this.state.fist + speed,
             back : this.state.back + speed 
         });
-        if ((this.state.back < 0) || (this.state.back > 640) ){
+        if (this.state.back < 0 || this.state.back > 640 || this.state.face < 0 || this.state.face > 640){
             this.setState({
                 x : this.state.x - speed,
                 face : this.state.face - speed,
+                fist : this.state.fist - speed,
                 back : this.state.back - speed 
             });
         }
